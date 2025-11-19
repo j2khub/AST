@@ -61,8 +61,8 @@ class RealConfig:
     SECRETKEY = os.getenv("REAL_SECRETKEY", "")
     TOKEN = os.getenv("REAL_TOKEN", "")
 
-    # 실전투자 API URL
-    API_BASE_URL = os.getenv("REAL_API_URL", "https://openapi.kiwoom.com:9443")
+    # 실전투자 API URL (API 가이드 기준)
+    API_BASE_URL = os.getenv("REAL_API_URL", "https://api.kiwoom.com")
 
     @classmethod
     def get_config(cls):
@@ -91,8 +91,8 @@ class VirtualConfig:
     SECRETKEY = os.getenv("VIRTUAL_SECRETKEY", "")
     TOKEN = os.getenv("VIRTUAL_TOKEN", "")
 
-    # 모의투자 API URL
-    API_BASE_URL = os.getenv("VIRTUAL_API_URL", "https://openapi.kiwoom.com:9443")
+    # 모의투자 API URL (API 가이드 기준)
+    API_BASE_URL = os.getenv("VIRTUAL_API_URL", "https://mockapi.kiwoom.com")
 
     @classmethod
     def get_config(cls):
