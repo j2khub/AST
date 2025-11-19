@@ -15,6 +15,7 @@
 ```
 AST/
 ├── main.py                 # 메인 실행 파일
+├── issue_token.py          # 토큰 발급 스크립트
 ├── config.py               # 설정 관리 (실전/모의투자 분리)
 ├── requirements.txt        # 필수 라이브러리 목록
 ├── .env.example           # 환경 변수 템플릿
@@ -22,7 +23,7 @@ AST/
 │
 ├── auth/                  # 인증 모듈
 │   ├── __init__.py
-│   └── token_manager.py   # 토큰 발급/관리 (au10001, au10002)
+│   └── token_manager.py   # 토큰 발급/관리 (au10001, au10002) ✅
 │
 ├── trading/               # 매매 모듈
 │   ├── __init__.py
@@ -36,8 +37,8 @@ AST/
 │
 ├── utils/                 # 유틸리티
 │   ├── __init__.py
-│   ├── logger.py          # 로깅
-│   └── api_client.py      # API 클라이언트 베이스
+│   ├── logger.py          # 로깅 ✅
+│   └── api_client.py      # API 클라이언트 베이스 ✅
 │
 ├── logs/                  # 로그 파일 저장
 │
@@ -73,6 +74,36 @@ cp .env.example .env
 ```bash
 python config.py
 ```
+
+### 4. 토큰 발급
+```bash
+python issue_token.py
+```
+
+토큰 발급 스크립트는 다음 작업을 수행합니다:
+- 설정된 APPKEY와 SECRETKEY로 접근 토큰 발급
+- .env 파일에 토큰 자동 저장 (선택)
+- 토큰 만료 일시 확인
+
+---
+
+## 🚀 실행 방법
+
+### 토큰 발급만 하기
+```bash
+python issue_token.py
+```
+
+### 자동매매 시스템 실행
+```bash
+python main.py
+```
+
+**현재 구현 상태:**
+- ✅ 토큰 자동 발급/갱신
+- ✅ 토큰 유효성 확인
+- ⏳ 실시간 조건검색 (예정)
+- ⏳ 자동매매 (예정)
 
 ---
 
